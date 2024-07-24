@@ -15,13 +15,14 @@ NAME = minishell
 CC = cc
 HEADERS = ./Libft/Headers
 INCLUDES = ./includes
-CFLAGS = -Wextra -Werror -Wall -g -I$(HEADERS) -I$(INCLUDES)
+FLAGS = -Wextra -Werror -Wall -g -I$(HEADERS) -I$(INCLUDES)
 RM = rm -f
 
 LIBFT_MAKE = ./Libft
 
 SRC =	./main.c \
 		./src/builtins/pwd.c \
+		./src/builtins/env.c \
 		./src/exec/signals.c \
 		./src/parsing/lexer_utils.c \
 		./src/parsing/lexer.c \

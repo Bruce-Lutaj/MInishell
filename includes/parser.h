@@ -53,6 +53,7 @@ typedef struct s_all
 {
 	t_elem	*head;
 	t_elem	*tail;
+	t_list	*envp;
 	int		size;
 }	t_all;
 

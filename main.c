@@ -10,9 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minishell.h"
 
-int	main(void)
+t_list *create_list_from_envp(char **envp)
+{
+	int rows = 0;
+
+	t_list *node_set = NULL;
+	t_list *env = NULL;
+	while (envp && envp[rows])
+	{
+		node_set = ft_lstnew(ft_strdup(envp[rows]));
+		ft_lstadd_back(&env, node_set);
+		rows++;
+	}
+	return (env);
+}
+
+int	main(int ac, char **av, char **envp)
 {
 	char	*input;
 	t_all	*token;
